@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cambiar Texto</title>
+</head>
+<body>
+
+<p id="miTexto">Texto Original</p>
+
+<button onclick="cambiarTexto()">Cambiar Texto</button>
+
+<script>
+    function cambiarTexto() {
+        var elemento = document.getElementById('miTexto');
+        if (elemento.innerHTML === 'Texto Original') {
+            elemento.innerHTML = '¡Texto Cambiado!';
+        } else {
+            elemento.innerHTML = 'Texto Original';
+        }
+    }
+	
+	
+	
+</script>
+
+    <p id="contador">0</p>
+
+    <button onclick="incrementarContador()">Incrementar</button>
+    <button onclick="resetearContador()">Resetear</button>
+
+    <script>
+        var contador = 0; // Inicializar el contador en 0
+
+        function incrementarContador() {
+            contador++; // Incrementar el contador en 1
+            document.getElementById('contador').innerText = contador; // Actualizar el contenido del elemento de párrafo
+        }
+
+        function resetearContador() {
+            contador = 0; // Restablecer el contador a 0
+            document.getElementById('contador').innerText = contador; // Actualizar el contenido del elemento de párrafo
+        }
+    </script>
+
+
+
+<br>
+
+<br>
+
+
+<br>
+    <label for="numeroInput">Ingrese un numero entre 1 y 10:</label>
+    <input type="number" id="numeroInput">
+    <button onclick="verificarNumero()">Verificar</button>
+
+    <script>
+        function verificarNumero() {
+            var input = document.getElementById('numeroInput');
+            var numero = input.value;
+
+            if (numero >= 1 && numero <= 10) {
+                alert('El numero esta en el rango.');
+                input.classList.remove('error'); // Eliminar el resaltado de error si existe
+            } else {
+                alert('El numero esta fuera del rango.');
+                input.classList.add('error'); // Resaltar el campo de entrada de texto en amarillo
+            }
+        }
+    </script>
+
+
+</body>
+</html>
